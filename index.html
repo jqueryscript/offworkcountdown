@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Countdown Timer – Hours Until Off Work, Weekend & Holidays</title>
+    <meta name="description" content="See how much time is left until you’re off work, the weekend starts, or the next holiday. Free workday countdown timer that updates in real time.">
+    <link rel="canonical" href="https://www.offworkcountdown.com/">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApp",
+      "name": "Workday Countdown Timer",
+      "description": "A free, real-time countdown timer to the end of your workday, the weekend, and holidays, complete with an earnings calculator.",
+      "url": "https://www.offworkcountdown.com/",
+      "applicationCategory": "Productivity",
+      "operatingSystem": "Any"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How many hours until the weekend?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our tool provides a real-time countdown to the weekend, showing you the exact days, hours, minutes, and seconds left until you are off the clock on Friday."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a free holiday countdown timer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, this website includes a free holiday countdown timer that automatically shows you the time remaining until the next major U.S. public holiday."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I calculate my workday countdown?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Simply enter your work start and end times in the settings, and our workday countdown clock will automatically calculate and display the time left in your day."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I customize my work hours?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. Click the settings icon to adjust your work start time and end time to match your personal schedule. The countdown timers will update instantly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my data safe and private?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. All your settings, such as salary and work hours, are stored exclusively in your own browser's local storage. No data is ever sent to or stored on a server."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to create an account to use this tool?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No account is needed. This is a free and open tool that works instantly upon visiting the page. All features are available to everyone without a login."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0eee5;
+            overflow-x: hidden;
+        }
+        .blob-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .blob {
+            position: absolute;
+            background: linear-gradient(45deg, #8b5cf6, #ec4899);
+            border-radius: 50%;
+            opacity: 0.1;
+            filter: blur(100px);
+            animation: blob-animation 25s infinite ease-in-out alternate;
+        }
+        .blob:nth-child(1) { width: 400px; height: 400px; top: 10%; left: 15%; animation-delay: 0s; }
+        .blob:nth-child(2) { width: 500px; height: 500px; bottom: 5%; right: 10%; animation-delay: 5s; }
+        .blob:nth-child(3) { width: 300px; height: 300px; top: 50%; left: 50%; transform: translateX(-50%); animation-delay: 10s; }
+        @keyframes blob-animation {
+            0% { transform: scale(1) translate(0, 0) rotate(0deg); }
+            100% { transform: scale(1.5) translate(100px, -100px) rotate(180deg); }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+    <!-- Hero Section -->
+    <div class="relative min-h-screen flex flex-col justify-center items-center p-4 sm:p-8">
+        <div class="blob-container">
+            <div class="blob"></div>
+            <div class="blob"></div>
+            <div class="blob"></div>
+        </div>
+        <header class="absolute top-4 right-4">
+            <button id="settings-btn" class="p-2 rounded-full bg-black/5 hover:bg-black/10">
+                <i data-lucide="settings" class="text-gray-800"></i>
+            </button>
+        </header>
+        <main class="w-full max-w-6xl mx-auto text-center">
+            <div class="mb-12">
+                <h1 class="text-5xl font-bold text-gray-900">Work Countdown: Time Until Off Work, Weekend & Holidays</h1>
+                <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Use our free workday countdown clock to see exactly how much time is left until you’re off work. Track the countdown to the weekend and upcoming holidays in real time.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white/50 backdrop-blur-sm border border-black/5 p-8 rounded-3xl min-w-[300px]">
+                    <h2 class="text-2xl font-semibold text-gray-700">End of Work Timer</h2>
+                    <p id="workday-timer" class="text-6xl font-mono font-bold text-gray-900 mt-2"></p>
+                </div>
+                <div class="bg-white/50 backdrop-blur-sm border border-black/5 p-8 rounded-3xl min-w-[300px]">
+                    <h2 class="text-2xl font-semibold text-gray-700">Weekend Countdown</h2>
+                    <p id="weekend-timer" class="text-6xl font-mono font-bold text-gray-900 mt-2"></p>
+                </div>
+                <div class="bg-white/50 backdrop-blur-sm border border-black/5 p-8 rounded-3xl min-w-[300px]">
+                    <h2 id="holiday-name" class="text-2xl font-semibold text-gray-700">Holiday Countdown</h2>
+                    <p id="holiday-timer" class="text-6xl font-mono font-bold text-gray-900 mt-2"></p>
+                </div>
+                <div class="md:col-span-3 bg-white/50 backdrop-blur-sm border border-black/5 p-8 rounded-3xl mt-8">
+                    <h2 class="text-3xl font-semibold text-gray-700">Today's Earnings</h2>
+                    <p id="earnings" class="text-7xl font-bold text-emerald-600 mt-2"></p>
+                </div>
+            </div>
+        </main>
+        <div class="absolute bottom-8 text-center text-gray-600 text-lg max-w-4xl">
+            <p id="quote-text"></p>
+            <p id="quote-author" class="font-semibold mt-2"></p>
+        </div>
+    </div>
+
+    <!-- Content Sections -->
+    <div class="py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
+
+            <!-- Features Section -->
+            <section id="features" class="text-center">
+                <h2 class="text-4xl font-bold text-gray-900">Features</h2>
+                <p class="mt-4 text-lg text-gray-600">Everything you need to stay motivated and on track.</p>
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <div class="text-center">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-purple-600/10 text-purple-600 mx-auto">
+                            <i data-lucide="timer"></i>
+                        </div>
+                        <h3 class="mt-6 text-xl font-bold">Multiple Timers</h3>
+                        <p class="mt-2 text-gray-600">Count down to the end of your day, the start of the weekend, and the next public holiday.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-emerald-600/10 text-emerald-600 mx-auto">
+                            <i data-lucide="dollar-sign"></i>
+                        </div>
+                        <h3 class="mt-6 text-xl font-bold">Earnings Calculator</h3>
+                        <p class="mt-2 text-gray-600">See your earnings grow in real-time throughout the day based on your annual salary.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-sky-600/10 text-sky-600 mx-auto">
+                            <i data-lucide="quote"></i>
+                        </div>
+                        <h3 class="mt-6 text-xl font-bold">Daily Motivation</h3>
+                        <p class="mt-2 text-gray-600">Get a new inspirational quote every day to keep your spirits high.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How It Works Section -->
+            <section id="how-it-works" class="text-center">
+                <h2 class="text-4xl font-bold text-gray-900">How It Works</h2>
+                <p class="mt-4 text-lg text-gray-600">Simple to set up, effortless to use.</p>
+                <div class="mt-12 flex flex-col md:flex-row items-center justify-center gap-8">
+                    <div class="flex items-center gap-4 p-6 bg-white/60 rounded-lg border border-black/5">
+                        <span class="text-3xl font-bold text-purple-600">1</span>
+                        <p class="text-left">Click the settings icon and enter your annual salary and work hours.</p>
+                    </div>
+                    <div class="flex items-center gap-4 p-6 bg-white/60 rounded-lg border border-black/5">
+                        <span class="text-3xl font-bold text-purple-600">2</span>
+                        <p class="text-left">Watch the timers count down and your earnings go up.</p>
+                    </div>
+                    <div class="flex items-center gap-4 p-6 bg-white/60 rounded-lg border border-black/5">
+                        <span class="text-3xl font-bold text-purple-600">3</span>
+                        <p class="text-left">Enjoy a daily dose of motivation to power through your day.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Use Cases Section -->
+            <section id="use-cases">
+                <h2 class="text-4xl font-bold text-gray-900 text-center">Who is this for?</h2>
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="p-8 bg-white/60 rounded-lg border border-black/5">
+                        <h3 class="text-2xl font-bold">Freelancers & Consultants</h3>
+                        <p class="mt-2 text-gray-600">Keep track of your day and stay motivated when you're your own boss.</p>
+                    </div>
+                    <div class="p-8 bg-white/60 rounded-lg border border-black/5">
+                        <h3 class="text-2xl font-bold">Remote Workers</h3>
+                        <p class="mt-2 text-gray-600">A perfect companion for your home office to maintain work-life balance.</p>
+                    </div>
+                    <div class="p-8 bg-white/60 rounded-lg border border-black/5">
+                        <h3 class="text-2xl font-bold">Office Professionals</h3>
+                        <p class="mt-2 text-gray-600">Make the 9-to-5 more enjoyable by seeing your progress and earnings in real-time.</p>
+                    </div>
+                    <div class="p-8 bg-white/60 rounded-lg border border-black/5">
+                        <h3 class="text-2xl font-bold">Anyone on the Clock</h3>
+                        <p class="mt-2 text-gray-600">If you work for a living, this tool can help make your day a little brighter.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQs Section -->
+            <section id="faqs" class="max-w-3xl mx-auto">
+                <h2 class="text-4xl font-bold text-gray-900 text-center">Frequently Asked Questions</h2>
+                <div class="mt-12 space-y-8">
+                    <div>
+                        <h3 class="text-xl font-bold">How many hours until the weekend?</h3>
+                        <p class="mt-2 text-gray-600">Our tool provides a real-time countdown to the weekend, showing you the exact days, hours, minutes, and seconds left until you are off the clock on Friday.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold">Is there a free holiday countdown timer?</h3>
+                        <p class="mt-2 text-gray-600">Yes, this website includes a free holiday countdown timer that automatically shows you the time remaining until the next major U.S. public holiday.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold">How do I calculate my workday countdown?</h3>
+                        <p class="mt-2 text-gray-600">Simply enter your work start and end times in the settings, and our workday countdown clock will automatically calculate and display the time left in your day.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold">Can I customize my work hours?</h3>
+                        <p class="mt-2 text-gray-600">Absolutely. Click the settings icon to adjust your work start time and end time to match your personal schedule. The countdown timers will update instantly.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold">Is my data safe and private?</h3>
+                        <p class="mt-2 text-gray-600">Yes. All your settings, such as salary and work hours, are stored exclusively in your own browser's local storage. No data is ever sent to or stored on a server.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold">Do I need to create an account to use this tool?</h3>
+                        <p class="mt-2 text-gray-600">No account is needed. This is a free and open tool that works instantly upon visiting the page. All features are available to everyone without a login.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300">
+        <div class="max-w-6xl mx-auto py-20 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold text-white">About</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="#" class="hover:text-white">Our Story</a></li>
+                        <li><a href="#" class="hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white">More Tools</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="#" class="hover:text-white">Tool 1</a></li>
+                        <li><a href="#" class="hover:text-white">Tool 2</a></li>
+                        <li><a href="#" class="hover:text-white">Tool 3</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white">Resources</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="#" class="hover:text-white">Blog</a></li>
+                        <li><a href="#" class="hover:text-white">Productivity Tips</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white">Legal</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-16 pt-8 border-t border-gray-700 text-center">
+                <p>&copy; 2024 OffWorkCountdown.com. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="fixed inset-0 bg-black/30 backdrop-blur-sm flex justify-center items-center hidden">
+        <div class="w-full max-w-md p-8 rounded-2xl bg-white/80 backdrop-blur-lg border border-black/10">
+            <h3 class="text-2xl font-bold mb-6 text-gray-900">Settings</h3>
+            <div class="space-y-4">
+                <div>
+                    <label for="annual-salary" class="block text-sm font-medium text-gray-700 mb-1">Annual Salary</label>
+                    <input type="number" id="annual-salary" class="w-full p-3 rounded-lg bg-white/50 border border-black/10 focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-800">
+                </div>
+                <div>
+                    <label for="work-start-time" class="block text-sm font-medium text-gray-700 mb-1">Work Start Time</label>
+                    <input type="time" id="work-start-time" class="w-full p-3 rounded-lg bg-white/50 border border-black/10 focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-800">
+                </div>
+                <div>
+                    <label for="work-end-time" class="block text-sm font-medium text-gray-700 mb-1">Work End Time</label>
+                    <input type="time" id="work-end-time" class="w-full p-3 rounded-lg bg-white/50 border border-black/10 focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-800">
+                </div>
+            </div>
+            <div class="flex gap-4 mt-8">
+                <button id="save-settings-btn" class="flex-1 py-3 rounded-lg bg-purple-600 hover:bg-purple-700 font-semibold text-white">Save</button>
+                <button id="close-settings-btn" class="flex-1 py-3 rounded-lg bg-gray-200 hover:bg-gray-300 font-semibold text-gray-800">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/holidays.js"></script>
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/quotes.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
