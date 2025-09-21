@@ -2,11 +2,7 @@
 
 **Website:** [https://www.offworkcountdown.com/](https://www.offworkcountdown.com/)
 
-This repository serves primarily as a source for external links and to host the code for Offwork Countdown, a feature-rich, SEO-optimized single-page web application.
-
-## About Offwork Countdown
-
-Offwork Countdown provides real-time countdowns to the end of the workday, the weekend, and holidays. It includes a real-time earnings calculator and a daily motivational quote, designed to help users stay motivated and track their progress.
+Offwork Countdown is a feature-rich, SEO-optimized single-page web application that provides real-time countdowns to the end of the workday, the weekend, and holidays. It includes a real-time earnings calculator and a daily motivational quote, designed to help users stay motivated and track their progress.
 
 ## Key Features:
 *   **Workday Timer:** Dynamic countdown to the start/end of your workday.
