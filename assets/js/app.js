@@ -106,7 +106,6 @@ document.addEventListener('DOMContentLoaded', () => {
         renderTimers();
         renderEarnings();
         renderQuote();
-        lucide.createIcons(); // Render all icons on the page
         setInterval(() => {
             renderTimers();
             renderEarnings();

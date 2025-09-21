@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Workday Countdown Timer</title>
+    <meta name="description" content="Terms of Service for the Workday Countdown Timer application.">
+    <link rel="canonical" href="https://www.offworkcountdown.com/terms-of-service">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicon-96x96.png">
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.offworkcountdown.com/terms-of-service">
+    <meta property="og:title" content="Terms of Service - Workday Countdown Timer">
+    <meta property="og:description" content="Terms of Service for the Workday Countdown Timer application.">
+    <meta property="og:image" content="https://www.offworkcountdown.com/assets/images/web-app-manifest-512x512.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.offworkcountdown.com/terms-of-service">
+    <meta property="twitter:title" content="Terms of Service - Workday Countdown Timer">
+    <meta property="twitter:description" content="Terms of Service for the Workday Countdown Timer application.">
+    <meta property="twitter:image" content="https://www.offworkcountdown.com/assets/images/web-app-manifest-512x512.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0eee5;
+            overflow-x: hidden;
+        }
+        .blob-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .blob {
+            position: absolute;
+            background: linear-gradient(45deg, #8b5cf6, #ec4899);
+            border-radius: 50%;
+            opacity: 0.1;
+            filter: blur(100px);
+            animation: blob-animation 25s infinite ease-in-out alternate;
+        }
+        .blob:nth-child(1) { width: 400px; height: 400px; top: 10%; left: 15%; animation-delay: 0s; }
+        .blob:nth-child(2) { width: 500px; height: 500px; bottom: 5%; right: 10%; animation-delay: 5s; }
+        .blob:nth-child(3) { width: 300px; height: 300px; top: 50%; left: 50%; transform: translateX(-50%); animation-delay: 10s; }
+        @keyframes blob-animation {
+            0% { transform: scale(1) translate(0, 0) rotate(0deg); }
+            100% { transform: scale(1.5) translate(100px, -100px) rotate(180deg); }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+    <header class="fixed top-0 left-0 right-0 z-10 bg-white/30 backdrop-blur-lg border-b border-black/5">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="/" class="text-xl font-bold text-gray-900">Offwork Countdown</a>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="/" class="text-gray-600 hover:text-gray-900 font-medium">Home</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900 font-medium">Privacy Policy</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="relative min-h-screen pt-20">
+        <div class="blob-container">
+            <div class="blob"></div>
+            <div class="blob"></div>
+            <div class="blob"></div>
+        </div>
+
+        <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-gray-900">Terms of Service</h1>
+                <p class="mt-4 text-lg text-gray-600">Last Updated: January 2025</p>
+            </div>
+
+            <div class="bg-white/50 backdrop-blur-sm border border-black/5 p-8 rounded-3xl space-y-8">
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">1. Acceptance of Terms</h2>
+                    <p class="text-gray-700">By accessing and using the Workday Countdown Timer ("the Service"), you accept and agree to be bound by the terms and provisions of this agreement. If you do not agree to abide by these terms, please do not use this Service.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">2. Description of Service</h2>
+                    <p class="text-gray-700">The Workday Countdown Timer is a free web application that provides real-time countdowns to the end of your workday, weekend, and upcoming holidays. The Service includes an earnings calculator and daily motivational quotes.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">3. User Data and Privacy</h2>
+                    <p class="text-gray-700">The Service operates entirely within your web browser. All user settings (including annual salary, work start time, and work end time) are stored locally in your browser's local storage. No personal data is transmitted to or stored on our servers.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">4. Intellectual Property</h2>
+                    <p class="text-gray-700">All content provided by the Service, including but not limited to text, graphics, logos, and software, is the property of OffWorkCountdown.com or its content suppliers and protected by international copyright laws.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">5. User Conduct</h2>
+                    <p class="text-gray-700">You agree to use the Service only for lawful purposes. You are prohibited from violating or attempting to violate the security of the Service.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">6. Disclaimer of Warranties</h2>
+                    <p class="text-gray-700">The Service is provided "as is" and "as available" without any warranties of any kind, either express or implied. We do not guarantee the accuracy, completeness, or usefulness of the Service.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">7. Limitation of Liability</h2>
+                    <p class="text-gray-700">In no event shall OffWorkCountdown.com be liable for any damages whatsoever resulting from the use or inability to use the Service.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">8. Changes to Terms</h2>
+                    <p class="text-gray-700">We reserve the right to modify these terms at any time. We will provide notice of significant changes by updating the "Last Updated" date at the top of this page.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">9. Governing Law</h2>
+                    <p class="text-gray-700">These terms shall be governed by and construed in accordance with the laws of the jurisdiction where the Service is operated.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">10. Contact Information</h2>
+                    <p class="text-gray-700">If you have any questions about these Terms of Service, please contact us through our website.</p>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300">
+        <div class="max-w-6xl mx-auto py-20 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold text-white">Offwork Countdown</h3>
+                    <p class="mt-4 text-gray-400">Your personal countdown to freedom. Track work, weekends, and holidays in one place.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white">More Tools</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="https://www.markdownhtmlgen.com/" class="hover:text-white" target="_blank">Free Markdown to HTML Converter</a></li>
+                        <li><a href="https://www.24to12converter.com/" class="hover:text-white" target="_blank">24-Hour to 12-Hour Time Converter</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white">Follow Us</h3>
+                    <div class="flex mt-4 space-x-4">
+                        <a href="https://www.facebook.com/jqueryscript" class="text-gray-400 hover:text-white">
+                            <span class="sr-only">Facebook</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                        </a>
+                        <a href="https://x.com/jqueryscript" class="text-gray-400 hover:text-white">
+                            <span class="sr-only">X</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="https://www.youtube.com/@jQueryScriptCSS" class="text-gray-400 hover:text-white">
+                            <span class="sr-only">YouTube</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.78 22 12 22 12s0 3.22-.42 4.814c-.23.861-.907 1.538-1.768 1.768C18.218 19 12 19 12 19s-6.218 0-7.812-.42c-.861-.23-1.538-.907-1.768-1.768C2.002 15.22 2 12 2 12s0-3.22.42-4.814c.23-.861.907-1.538-1.768-1.768C3.782 5 12 5 12 5s6.218 0 7.812.418zM9.75 15.5V8.5l6.5 3.5-6.5 3.5z" clip-rule="evenodd" /></svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white">Legal</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service.html" class="hover:text-white font-semibold">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-16 pt-8 border-t border-gray-700 text-center">
+                <p>&copy; 2025 OffWorkCountdown.com. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Workday Countdown Timer</title>
+    <meta name="description" content="Privacy Policy for the Workday Countdown Timer application.">
+    <link rel="canonical" href="https://www.offworkcountdown.com/privacy-policy">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicon-96x96.png">
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.offworkcountdown.com/privacy-policy">
+    <meta property="og:title" content="Privacy Policy - Workday Countdown Timer">
+    <meta property="og:description" content="Privacy Policy for the Workday Countdown Timer application.">
+    <meta property="og:image" content="https://www.offworkcountdown.com/assets/images/web-app-manifest-512x512.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.offworkcountdown.com/privacy-policy">
+    <meta property="twitter:title" content="Privacy Policy - Workday Countdown Timer">
+    <meta property="twitter:description" content="Privacy Policy for the Workday Countdown Timer application.">
+    <meta property="twitter:image" content="https://www.offworkcountdown.com/assets/images/web-app-manifest-512x512.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0eee5;
+            overflow-x: hidden;
+        }
+        .blob-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .blob {
+            position: absolute;
+            background: linear-gradient(45deg, #8b5cf6, #ec4899);
+            border-radius: 50%;
+            opacity: 0.1;
+            filter: blur(100px);
+            animation: blob-animation 25s infinite ease-in-out alternate;
+        }
+        .blob:nth-child(1) { width: 400px; height: 400px; top: 10%; left: 15%; animation-delay: 0s; }
+        .blob:nth-child(2) { width: 500px; height: 500px; bottom: 5%; right: 10%; animation-delay: 5s; }
+        .blob:nth-child(3) { width: 300px; height: 300px; top: 50%; left: 50%; transform: translateX(-50%); animation-delay: 10s; }
+        @keyframes blob-animation {
+            0% { transform: scale(1) translate(0, 0) rotate(0deg); }
+            100% { transform: scale(1.5) translate(100px, -100px) rotate(180deg); }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+    <header class="fixed top-0 left-0 right-0 z-10 bg-white/30 backdrop-blur-lg border-b border-black/5">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="/" class="text-xl font-bold text-gray-900">Offwork Countdown</a>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="/" class="text-gray-600 hover:text-gray-900 font-medium">Home</a>
+                    <a href="/terms-of-service.html" class="text-gray-600 hover:text-gray-900 font-medium">Terms of Service</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="relative min-h-screen pt-20">
+        <div class="blob-container">
+            <div class="blob"></div>
+            <div class="blob"></div>
+            <div class="blob"></div>
+        </div>
+
+        <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-gray-900">Privacy Policy</h1>
+                <p class="mt-4 text-lg text-gray-600">Last Updated: January 2025</p>
+            </div>
+
+            <div class="bg-white/50 backdrop-blur-sm border border-black/5 p-8 rounded-3xl space-y-8">
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">1. Introduction</h2>
+                    <p class="text-gray-700">Welcome to the Workday Countdown Timer. This Privacy Policy explains how we handle your information when you use our Service. We are committed to protecting your privacy and ensuring transparency about our data practices.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">2. Information We Collect</h2>
+                    <p class="text-gray-700">The Workday Countdown Timer is designed with privacy in mind. We do not collect, store, or transmit any personal information to our servers. All data you provide, including:</p>
+                    <ul class="list-disc list-inside mt-2 text-gray-700 space-y-1">
+                        <li>Annual salary information</li>
+                        <li>Work start and end times</li>
+                        <li>Any other settings preferences</li>
+                    </ul>
+                    <p class="text-gray-700 mt-4">is stored exclusively in your web browser's local storage on your own device.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">3. How We Use Information</h2>
+                    <p class="text-gray-700">Since we do not collect any personal data, we do not use your information for any purpose. The data stored locally in your browser is used solely to:</p>
+                    <ul class="list-disc list-inside mt-2 text-gray-700 space-y-1">
+                        <li>Display personalized countdown timers</li>
+                        <li>Calculate real-time earnings</li>
+                        <li>Remember your preferences between sessions</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">4. Data Storage and Security</h2>
+                    <p class="text-gray-700">All your data remains on your local device. We employ modern web security practices, but ultimately the security of your locally stored data depends on your browser and device security settings.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">5. Third-Party Services</h2>
+                    <p class="text-gray-700">We use the following third-party services that may collect anonymous usage data:</p>
+                    <ul class="list-disc list-inside mt-2 text-gray-700 space-y-1">
+                        <li>Google Fonts for typography</li>
+                        <li>Tailwind CSS for styling</li>
+                        <li>Lucide for icons</li>
+                    </ul>
+                    <p class="text-gray-700 mt-4">These services may collect standard internet log information and usage details in accordance with their respective privacy policies.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">6. Cookies and Tracking</h2>
+                    <p class="text-gray-700">We do not use cookies for tracking purposes. The Service only uses browser local storage to remember your settings, which is essential for the functionality of the application.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">7. Your Rights</h2>
+                    <p class="text-gray-700">Since we do not store your data on our servers, you have complete control over your information. You can:</p>
+                    <ul class="list-disc list-inside mt-2 text-gray-700 space-y-1">
+                        <li>Clear your browser's local storage at any time</li>
+                        <li>Modify your settings through the application's interface</li>
+                        <li>Stop using the Service at any time</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">8. Children's Privacy</h2>
+                    <p class="text-gray-700">Our Service is not directed to children under the age of 13. We do not knowingly collect personal information from children. If you are a parent or guardian and believe your child has provided us with personal information, please contact us.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">9. Changes to This Policy</h2>
+                    <p class="text-gray-700">We may update this Privacy Policy from time to time. We will notify you of any changes by updating the "Last Updated" date at the top of this page. We encourage you to review this Privacy Policy periodically.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">10. Contact Us</h2>
+                    <p class="text-gray-700">If you have any questions or concerns about this Privacy Policy or our data practices, please contact us through our website.</p>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300">
+        <div class="max-w-6xl mx-auto py-20 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold text-white">Offwork Countdown</h3>
+                    <p class="mt-4 text-gray-400">Your personal countdown to freedom. Track work, weekends, and holidays in one place.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white">More Tools</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="https://www.markdownhtmlgen.com/" class="hover:text-white" target="_blank">Free Markdown to HTML Converter</a></li>
+                        <li><a href="https://www.24to12converter.com/" class="hover:text-white" target="_blank">24-Hour to 12-Hour Time Converter</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white">Follow Us</h3>
+                    <div class="flex mt-4 space-x-4">
+                        <a href="https://www.facebook.com/jqueryscript" class="text-gray-400 hover:text-white">
+                            <span class="sr-only">Facebook</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                        </a>
+                        <a href="https://x.com/jqueryscript" class="text-gray-400 hover:text-white">
+                            <span class="sr-only">X</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="https://www.youtube.com/@jQueryScriptCSS" class="text-gray-400 hover:text-white">
+                            <span class="sr-only">YouTube</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.78 22 12 22 12s0 3.22-.42 4.814c-.23.861-.907 1.538-1.768 1.768C18.218 19 12 19 12 19s-6.218 0-7.812-.42c-.861-.23-1.538-.907-1.768-1.768C2.002 15.22 2 12 2 12s0-3.22.42-4.814c.23-.861.907-1.538-1.768-1.768C3.782 5 12 5 12 5s6.218 0 7.812.418zM9.75 15.5V8.5l6.5 3.5-6.5 3.5z" clip-rule="evenodd" /></svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white">Legal</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="/privacy-policy.html" class="hover:text-white font-semibold">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service.html" class="hover:text-white">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-16 pt-8 border-t border-gray-700 text-center">
+                <p>&copy; 2025 OffWorkCountdown.com. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
