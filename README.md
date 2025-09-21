@@ -1,23 +1,20 @@
-# Workday Countdown Timer
+# Offwork Countdown
 
-A lightweight, open-source web app to track your workday, earnings, and time until the next break.
+**Website:** [https://www.offworkcountdown.com/](https://www.offworkcountdown.com/)
 
-## Features
+This repository serves primarily as a source for external links and to host the code for Offwork Countdown, a feature-rich, SEO-optimized single-page web application.
 
-*   **Countdown Timers:** See how much time is left until the end of your workday, the weekend, and the next U.S. holiday.
-*   **Earnings Tracker:** Watch your earnings accumulate in real-time based on your annual salary.
-*   **Customizable:** Adjust your annual salary, work start time, and work end time in the settings.
+## About Offwork Countdown
 
-## Tech Stack
+Offwork Countdown provides real-time countdowns to the end of the workday, the weekend, and holidays. It includes a real-time earnings calculator and a daily motivational quote, designed to help users stay motivated and track their progress.
 
+## Key Features:
+*   **Workday Timer:** Dynamic countdown to the start/end of your workday.
+*   **Weekend & Holiday Countdowns:** Track time until your next break.
+*   **Earnings Calculator:** See your earnings grow in real-time.
+*   **User Settings:** Customizable work hours and salary saved locally.
+
+## Technologies Used:
 *   Vanilla JavaScript
-*   TailwindCSS 4
+*   Tailwind CSS 4
 *   Lucid Icons
-
-## Usage
-
-Simply open the `index.html` file in your browser. All data is stored locally in your browser's `localStorage`.
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a pull request or open an issue.
